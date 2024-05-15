@@ -13,10 +13,12 @@ int main(int argc, char *argv[]) {
   start = measure->GetJSON()["hw_instructions"];
   for (int i = 0; i < N; i++) {
     if (i % 2 == 0) {
-      arr[i] += i;
+      arr[i] = 1;
     } else {
-      arr[i] -= i;
+      arr[i] = -1;
     }
+
+    arr[i] *= i;
   }
   measure->DoMeasure();
   end = measure->GetJSON()["hw_instructions"];

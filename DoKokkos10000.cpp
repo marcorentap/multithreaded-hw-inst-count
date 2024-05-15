@@ -20,6 +20,8 @@ int main(int argc, char *argv[]) {
         } else {
           arr(i) = -1;
         }
+
+        arr(i) *= i;
       });
   measure->DoMeasure();
   end = measure->GetJSON()["hw_instructions"];
